@@ -19,17 +19,25 @@
             }
             body {
                 font-family: 'Nunito', sans-serif;
+                margin: 0 3rem;
             }
         </style>
     </head>
     <body>
-        <h1>Lista Post</h1>
-        @foreach ($posts as $post) 
-            <h3>{{$post->title}}</h3>
-            <p>{{$post->body}}</p>
-        @endforeach
-
-        <a href="{{route('posts.create')}}" class="btn bg-primary">Crea nuovo post</a>
-
+        <h1>Crea Post</h1>
+        
+        <form action="{{route('posts.store')}}" method="post">
+            @csrf
+            <div class="form-group">
+                <label for="title">Title</label>
+                <input class="form-control" type="text" name="title" id="title">
+            </div>
+            <div class="form-group">
+              <label for="body">Body</label>
+              <textarea class="form-control" name="" id="" rows="3"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+        
     </body>
 </html>

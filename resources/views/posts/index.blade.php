@@ -22,6 +22,7 @@
         </style>
     </head>
     <body>
-        <h1>Home</h1>
+        <h1>Lista Post</h1>
+            
     </body>
 </html>

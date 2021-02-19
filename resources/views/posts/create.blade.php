@@ -30,14 +30,15 @@
             @csrf
             <div class="form-group">
                 <label for="title">Title</label>
-                <input class="form-control" type="text" name="title" id="title">
+                <input class="form-control" type="text" name="title" id="title" value="">
             </div>
             <div class="form-group">
               <label for="body">Body</label>
-              <textarea class="form-control" name="" id="" rows="3"></textarea>
+              <textarea class="form-control" name="body" id="body" rows="3"></textarea>
             </div>
             <button type="submit" class="btn btn-primary">Submit</button>
         </form>
+        
         
     </body>
 </html>

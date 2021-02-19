@@ -19,17 +19,34 @@
             }
             body {
                 font-family: 'Nunito', sans-serif;
+                margin: 0 3rem;
             }
         </style>
     </head>
     <body>
         <h1>Lista Post</h1>
-        @foreach ($posts as $post) 
-            <h3>{{$post->title}}</h3>
-            <p>{{$post->body}}</p>
-        @endforeach
-
         <a href="{{route('posts.create')}}" class="btn bg-primary">Crea nuovo post</a>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Title</th>
+                    <th>Body</th>
+                    <th>Created</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach ($posts as $post) 
+                <tr>
+                    <td scope="row">{{$post->id}}</td>
+                    <td>{{$post->title}}</td>
+                    <td>{{$post->body}}</td>
+                    <td>{{$post->created_at}}</td>
+                </tr>
+                @endforeach
+            </tbody>
+        </table>
+
 
     </body>
 </html>

@@ -37,7 +37,13 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        dd('ciao, volevi inserire un post');
+        /* dd('ciao, volevi inserire un post'); */
+        $post = new Post;
+        $post->title = request('title');
+        $post->body = request('body');
+        $post->save();
+
+        return redirect()->route('posts.index');
     }
 
     /**

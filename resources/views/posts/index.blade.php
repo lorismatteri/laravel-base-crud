@@ -9,6 +9,8 @@
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
 
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous">
+
         <!-- Styles -->
         <link rel="stylesheet" href="{{asset('css/app.css')}}">
         <style>
@@ -48,8 +50,8 @@
                             <i class="fas fa-eye fa-lg fa-fw"></i>
                             View
                         </a>   
-                        <a href="" class="btn btn-warning">
-                            <i class="fas fa-eye fa-lg fa-fw"></i>
+                        <a href="{{route('posts.edit', ['post' => $post->id])}}" class="btn btn-warning">
+                            <i class="fas fa-pen fa-lg fa-fw"></i>
                             Edit
                         </a>  
                         <form action="" method="post">

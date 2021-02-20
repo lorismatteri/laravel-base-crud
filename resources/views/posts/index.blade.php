@@ -33,6 +33,7 @@
                     <th>Title</th>
                     <th>Body</th>
                     <th>Created</th>
+                    <th>Actions</th>
                 </tr>
             </thead>
             <tbody>
@@ -42,6 +43,22 @@
                     <td>{{$post->title}}</td>
                     <td>{{$post->body}}</td>
                     <td>{{$post->created_at}}</td>
+                    <td>
+                        <a href="{{route('posts.show', ['post' => $post->id])}}" class="btn btn-primary">
+                            <i class="fas fa-eye fa-lg fa-fw"></i>
+                            View
+                        </a>   
+                        <a href="" class="btn btn-warning">
+                            <i class="fas fa-eye fa-lg fa-fw"></i>
+                            Edit
+                        </a>  
+                        <form action="" method="post">
+                            <button type="submit" class="btn btn-danger">
+                                <i class="fas fa-trash fa-lg fa-fw"></i>
+                                Delete
+                            </button>
+                        </form> 
+                    </td>
                 </tr>
                 @endforeach
             </tbody>

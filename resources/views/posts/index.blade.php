@@ -26,6 +26,22 @@
         </style>
     </head>
     <body>
+
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+                
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="{{route('home')}}">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{route('posts.index')}}">Posts</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
         <h1>Lista Post</h1>
         <a href="{{route('posts.create')}}" class="btn bg-primary">Crea nuovo post</a>
         <table class="table">
@@ -54,7 +70,9 @@
                             <i class="fas fa-pen fa-lg fa-fw"></i>
                             Edit
                         </a>  
-                        <form action="" method="post">
+                        <form action="{{route('posts.destroy', ['post' => $post->id])}}" method="post">
+                        @csrf
+                        @method('DELETE')
                             <button type="submit" class="btn btn-danger">
                                 <i class="fas fa-trash fa-lg fa-fw"></i>
                                 Delete
@@ -64,6 +82,7 @@
                 </tr>
                 @endforeach
             </tbody>
+
         </table>
 
 
